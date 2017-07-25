@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.0.0)
+PROJECT(tREUListener)
+
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Wall")
+
+IF(NOT CMAKE_BUILD_TYPE)
+# SET(CMAKE_BUILD_TYPE "Debug")
+ SET(CMAKE_BUILD_TYPE "Release")
+ENDIF(NOT CMAKE_BUILD_TYPE)
+
+ADD_EXECUTABLE(tREUListener tREUListener.cpp ComDriver.h)
