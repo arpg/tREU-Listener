@@ -1,4 +1,0 @@
-#ifndef TREULISTENER_H
-#define TREULISTENER_H
-
-#endif // TREULISTENER_H

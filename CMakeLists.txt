@@ -1,11 +1,13 @@
-cmake_minimum_required(VERSION 3.0.0)
-PROJECT(tREUListener)
+project(tREUListener)
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Wall")
+cmake_minimum_required(VERSION 2.8)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Wextra")
 
-IF(NOT CMAKE_BUILD_TYPE)
-# SET(CMAKE_BUILD_TYPE "Debug")
- SET(CMAKE_BUILD_TYPE "Release")
-ENDIF(NOT CMAKE_BUILD_TYPE)
+find_package(HAL REQUIRED)
 
-ADD_EXECUTABLE(tREUListener tREUListener.cpp ComDriver.h)
+include_directories( ${HAL_INCLUDE_DIRS} )
+add_executable( tREUListener tREUListener.cpp ComDriver.h )
+target_link_libraries(tREUListener
+    ${HAL_LIBRARIES}
+     )
+
